@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity3">
+
+    <TextView
+        android:id="@+id/text_view_countdown_timer"
+        android:layout_width="125dp"
+        android:layout_height="57dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="120dp"
+        android:text="00:00:"
+        android:textSize="45sp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/progressBar_timer"
+        app:layout_constraintTop_toTopOf="@+id/progressBar_timer"
+        tools:textColor="@color/darkgray"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/text_view_countdown2_timer"
+        android:layout_width="64dp"
+        android:layout_height="57dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="84dp"
+        android:text="00"
+        android:textColor="#F44336"
+        android:textSize="45sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_countdown_timer"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar_timer"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/text_view_countdown_timer"
+        app:layout_constraintTop_toTopOf="@+id/text_view_countdown_timer"
+        app:layout_constraintVertical_bias="0.845"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/start_pause_timer"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/text_view_countdown_timer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="59dp"
+        android:text="Pause"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/restart_timer_lap"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/restart_timer_lap"
+        app:layout_constraintTop_toTopOf="@+id/restart_timer_lap"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/starttimer"
+        android:layout_width="224dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/text_view_countdown_timer"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/red"
+        android:gravity="center_horizontal"
+        android:text="Start"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/start_pause_timer"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/restart_timer_lap"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/restart_timer_lap"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/text_view_countdown_timer"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="15dp"
+        android:layout_toRightOf="@+id/start_pause_timer"
+        android:text="Lap"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/start_pause_timer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar_timer"
+        app:layout_constraintVertical_bias="0.912"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_timer"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="375dp"
+        android:layout_height="332dp"
+        android:layout_marginBottom="13dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/circul"
+        app:indicatorDirectionCircular="clockwise"
+        app:indicatorSize="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:text="Timer"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar_timer"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar_timer"
+        app:layout_constraintStart_toStartOf="@+id/progressBar_timer"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_countdown_timer"
+        app:layout_constraintVertical_bias="0.508" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="358dp"
+        android:layout_height="220dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="33dp"
+        app:layout_constraintBottom_toTopOf="@+id/start_pause_timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:id="@+id/tablelayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.clock">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icons8_alarm_clock_24px_1"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Clock">
+        <receiver android:name=".AlarmReceiver"/>
+        <activity android:name=".activities.reminder"
+            tools:ignore="Instantiatable"></activity>
+        <activity android:name=".activities.MainActivityalarm"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".activities.MainActivityfregment">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.WorldClockActivity"
+            tools:ignore="Instantiatable" /> <!-- Activity to add/edit timezone -->
+        <activity android:name=".TimeZoneEdit">
+
+            <!-- Edit -->
+            <intent-filter android:label="@string/title_timezone_edit">
+                <action android:name="android.intent.action.EDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- Add -->
+            <intent-filter android:label="@string/title_timezone_add">
+                <action android:name="android.intent.action.INSERT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.MainActivity2"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".activities.MainActivity3"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".activities.MainActivity"
+            tools:ignore="Instantiatable" />
+    </application>
+
+</manifest>
